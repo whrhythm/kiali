@@ -33,7 +33,7 @@ import { SortableTh } from 'components/Table/SimpleTable';
 import { isKiosk } from 'components/Kiosk/KioskActions';
 import { store } from 'store/ConfigStore';
 import { classes } from 'typestyle';
-
+import { t } from 'utils/I18nUtils';
 const emptyStyle = kialiStyle({
   borderBottom: 0
 });
@@ -276,9 +276,9 @@ class VirtualListComponent<R extends RenderResource> extends React.Component<Vir
                   </EmptyState>
                 ) : (
                   <EmptyState variant={EmptyStateVariant.full}>
-                    <EmptyStateHeader titleText="No namespace is selected" headingLevel="h5" />
+                    <EmptyStateHeader titleText={t('No namespace is selected')} headingLevel="h5" />
                     <EmptyStateBody>
-                      There is currently no namespace selected, please select one using the Namespace selector.
+                      {t('There is currently no namespace selected, please select one using the Namespace selector.')}
                     </EmptyStateBody>
                   </EmptyState>
                 )}

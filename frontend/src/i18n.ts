@@ -10,7 +10,7 @@ i18next
       loadPath: `${process.env.PUBLIC_URL}/locales/{{lng}}/{{ns}}.json`
     },
 
-    fallbackLng: 'en',
+    fallbackLng: 'zh',
 
     // as we use only one namespace, set with unused character to allow translated strings ends with : (default nsSeparator value)
     nsSeparator: '|',
