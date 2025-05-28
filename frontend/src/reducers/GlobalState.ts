@@ -8,7 +8,7 @@ export const INITIAL_GLOBAL_STATE: GlobalState = {
   loadingCounter: 0,
   isPageVisible: true,
   kiosk: '',
-  language: '',
+  language: 'zh',
   theme: ''
 };
 
