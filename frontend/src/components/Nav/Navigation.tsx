@@ -88,7 +88,7 @@ export const NavigationComponent: React.FC<NavigationProps> = (props: Navigation
   const isNavOpen = isMobileView ? isNavOpenMobile : isNavOpenDesktop || !props.navCollapsed;
 
   const masthead = (
-    <Masthead role="kiali_header" style={{ height: MASTHEAD_HEIGHT }}>
+    <Masthead role="kiali_header" style={{ height: MASTHEAD_HEIGHT, backgroundColor: '#fff' }}>
       <MastheadToggle>
         <PageToggleButton
           variant={ButtonVariant.plain}
@@ -96,7 +96,7 @@ export const NavigationComponent: React.FC<NavigationProps> = (props: Navigation
           isSidebarOpen={isNavOpen}
           onSidebarToggle={isMobileView ? onNavToggleMobile : onNavToggleDesktop}
         >
-          <BarsIcon />
+          <BarsIcon style={{ backgroundColor: '#000' }}/>
         </PageToggleButton>
       </MastheadToggle>
       <MastheadMain>
@@ -113,7 +113,7 @@ export const NavigationComponent: React.FC<NavigationProps> = (props: Navigation
   const menu = <Menu isNavOpen={isNavOpen} externalServices={props.externalServices} />;
 
   const Sidebar = (
-    <PageSidebar style={{ width: '210px' }} isSidebarOpen={isNavOpen}>
+    <PageSidebar style={{ width: '210px', backgroundColor: '#fff' }} isSidebarOpen={isNavOpen}>
       <PageSidebarBody>{menu}</PageSidebarBody>
     </PageSidebar>
   );

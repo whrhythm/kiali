@@ -44,6 +44,14 @@ type MenuProps = {
   isNavOpen: boolean;
 };
 
+const menuLinkStyle = kialiStyle({
+  $nest: {
+    '&::before': {
+      borderColor: '#fff'
+    }
+  }
+});
+
 export const Menu: React.FC<MenuProps> = (props: MenuProps) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
@@ -84,12 +92,12 @@ export const Menu: React.FC<MenuProps> = (props: MenuProps) => {
         let title = item.title;
 
         if (item.id === 'tracing') {
-          return tracingUrl && <ExternalLink key={item.to} href={tracingUrl} name={t(title)} />;
+          return tracingUrl && <ExternalLink key={item.to} href={tracingUrl} name={t(title)} />; 
         }
 
         return (
           <NavItem isActive={activeMenuItem === item} key={item.to}>
-            <Link id={item.id} to={item.to} onClick={() => navigate(item.to)}>
+            <Link id={item.id} to={item.to} onClick={() => navigate(item.to)} className={menuLinkStyle} style={{ color: '#000', backgroundColor: (activeMenuItem === item && '#f1f6ff' || '#fff') }}>
               {t(title)}
             </Link>
           </NavItem>

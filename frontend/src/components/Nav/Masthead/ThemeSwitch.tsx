@@ -91,6 +91,7 @@ export const ThemeSwitchComponent: React.FC<ThemeSwitchProps> = (props: ThemeSwi
           variant={darkTheme ? 'primary' : 'secondary'}
           className={classes(buttonStyle, darkButtonStyle)}
           onClick={handleTheme}
+          style={{ backgroundColor: '#000' }}
         >
           <KialiIcon.Moon className={iconStyle}></KialiIcon.Moon>
         </Button>

@@ -3,7 +3,7 @@ import { Flex, FlexItem, Toolbar, ToolbarItem } from '@patternfly/react-core';
 
 import { serverConfig } from '../../../config';
 import { IstioStatus } from '../../IstioStatus/IstioStatus';
-import { UserDropdown } from './UserDropdown';
+// import { UserDropdown } from './UserDropdown';
 import { HelpDropdown } from './HelpDropdown';
 import { MessageCenterTrigger } from '../../../components/MessageCenter/MessageCenterTrigger';
 import { ThemeSwitch } from './ThemeSwitch';
@@ -43,17 +43,17 @@ const languageSwitchStyle = kialiStyle({
   marginRight: '0.75rem'
 });
 
-const userDropdownStyle = kialiStyle({
-  marginLeft: '0.5rem',
-  position: 'relative',
-  bottom: '0.125rem'
-});
+// const userDropdownStyle = kialiStyle({
+//   marginLeft: '0.5rem',
+//   position: 'relative',
+//   bottom: '0.125rem'
+// });
 
 export const MastheadItems: React.FC = () => {
   return (
     <>
       <PfSpinner />
-      <Toolbar>
+      <Toolbar style={{ backgroundColor: '#fff' }}>
         <ToolbarItem className={toolbarStyle}>
           <Flex>
             <FlexItem className={istioStatusStyle}>
@@ -65,7 +65,7 @@ export const MastheadItems: React.FC = () => {
             </FlexItem>
 
             {serverConfig.kialiFeatureFlags.uiDefaults?.i18n?.showSelector && (
-              <FlexItem className={languageSwitchStyle}>
+              <FlexItem className={languageSwitchStyle} style={{ backgroundColor: '#000' }}>
                 <LanguageSwitch />
               </FlexItem>
             )}
@@ -74,13 +74,13 @@ export const MastheadItems: React.FC = () => {
               <MessageCenterTrigger />
             </FlexItem>
 
-            <FlexItem className={helpDropdownStyle}>
+            <FlexItem className={helpDropdownStyle} style={{ backgroundColor: '#000' }}>
               <HelpDropdown />
             </FlexItem>
 
-            <FlexItem data-test="user-dropdown" className={userDropdownStyle}>
+            {/* <FlexItem data-test="user-dropdown" className={userDropdownStyle}>
               <UserDropdown />
-            </FlexItem>
+            </FlexItem> */}
           </Flex>
         </ToolbarItem>
       </Toolbar>
